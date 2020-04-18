@@ -4369,9 +4369,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1812407141}
   - component: {fileID: 1812407140}
-  - component: {fileID: 1812407142}
   - component: {fileID: 1812407139}
   - component: {fileID: 1812407143}
+  - component: {fileID: 1812407144}
+  - component: {fileID: 1812407142}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4388,7 +4389,7 @@ BoxCollider:
   m_GameObject: {fileID: 1812407138}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.6159194, y: 0.49664098, z: 2.1542683}
   m_Center: {x: 0.059547275, y: 0.110738784, z: -0.9771342}
@@ -4466,7 +4467,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1812407138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47576430a58a7b4f9c583e410262fb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f061705769e5d943a5fa474d3b06b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
@@ -4486,6 +4487,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!136 &1812407144
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812407138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.0480006
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1897556681
 GameObject:
   m_ObjectHideFlags: 0
@@ -4900,6 +4915,7 @@ GameObject:
   - component: {fileID: 2102845561}
   - component: {fileID: 2102845560}
   - component: {fileID: 2102845559}
+  - component: {fileID: 2102845562}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4966,9 +4982,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102845558}
   m_LocalRotation: {x: 0, y: 1, z: 0.000000059604645, w: 0}
-  m_LocalPosition: {x: -0.11000013, y: 0.41999912, z: 7.710001}
+  m_LocalPosition: {x: 0, y: 0, z: 7.710001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1812407141}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: -180}
+--- !u!114 &2102845562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102845558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e42c8df581d3a4eb374326421184e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
