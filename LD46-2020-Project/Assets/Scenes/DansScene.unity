@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &47976519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,7 +873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8eec01b399e6844198000ce556371e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConvoCanvas: {fileID: 267532063}
+  TaskboardCanvas: {fileID: 47976518}
 --- !u!1 &639927940
 GameObject:
   m_ObjectHideFlags: 0
