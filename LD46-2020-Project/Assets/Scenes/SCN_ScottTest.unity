@@ -212,7 +212,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 133.42099, y: -7.1640015, z: 10.908997}
 --- !u!1 &293270897
 GameObject:
@@ -573,7 +573,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295087823}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.012000005, y: 0.085610375, z: 0.012000004}
@@ -1182,7 +1182,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 88c7e9a30aaea0b429b4ea3815d2470f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 88c7e9a30aaea0b429b4ea3815d2470f,
         type: 3}
@@ -1382,7 +1382,7 @@ GameObject:
   - component: {fileID: 1083825359}
   - component: {fileID: 1083825358}
   - component: {fileID: 1083825357}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1692,7 +1692,7 @@ GameObject:
   - component: {fileID: 1128525430}
   - component: {fileID: 1128525429}
   - component: {fileID: 1128525428}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3756,7 +3756,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1697256317
 PrefabInstance:
@@ -3803,7 +3803,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 88c7e9a30aaea0b429b4ea3815d2470f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 88c7e9a30aaea0b429b4ea3815d2470f,
         type: 3}
@@ -4046,7 +4046,7 @@ GameObject:
   - component: {fileID: 1897556684}
   - component: {fileID: 1897556683}
   - component: {fileID: 1897556682}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

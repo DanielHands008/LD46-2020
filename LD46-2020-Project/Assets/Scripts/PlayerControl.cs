@@ -22,7 +22,9 @@ public class PlayerControl : MonoBehaviour
   {
     m_riigidbody = GetComponent<Rigidbody>();
     m_animator = GetComponent<Animator>();
-  }
+
+        Bullet.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+    }
 
   private void Update()
   {
@@ -74,8 +76,6 @@ Debug.DrawLine(transform.position, transform.up * 1000, Color.white);
     m_riigidbody.MovePosition(transform.position + -change * speed * Time.deltaTime);
 
   }
-
-
 
 
 
