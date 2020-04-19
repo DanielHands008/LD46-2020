@@ -13,15 +13,12 @@ public class PlayerControl : MonoBehaviour
   private Rigidbody m_riigidbody;
   private Vector3 change;
 
-  private Animator m_animator;
-
   private float angle;
 
 
   void Start()
   {
     m_riigidbody = GetComponent<Rigidbody>();
-    m_animator = GetComponent<Animator>();
 
         
     }
