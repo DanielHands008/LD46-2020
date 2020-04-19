@@ -50,7 +50,7 @@ Debug.DrawLine(transform.position, transform.up * 1000, Color.white);
   void Shoot()
   {
     //Creating the bullet and shooting it
-    var pel = Instantiate(Bullet, transform.position, Quaternion.Euler(0, 0, angle));
+    var pel = Instantiate(Bullet, transform.position, Quaternion.Euler(-90, 0, -angle - 90));
     pel.GetComponent<Rigidbody>().AddForce(transform.up * ProjectileSpeed);
   }
 
