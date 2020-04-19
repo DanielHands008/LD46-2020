@@ -39,7 +39,7 @@ public class PlayerControl : MonoBehaviour
     //Ta Daaa
     transform.rotation = Quaternion.Euler(new Vector3(-90f, -90f, -angle));
 Debug.DrawLine(transform.position, transform.up * 1000, Color.white);
-    if (Input.GetMouseButtonDown(0))
+    if (Input.GetMouseButton(0))
     {
       
       Shoot();
