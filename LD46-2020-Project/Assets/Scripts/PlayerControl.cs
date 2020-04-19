@@ -37,7 +37,7 @@ public class PlayerControl : MonoBehaviour
 
     //Ta Daaa
     transform.rotation = Quaternion.Euler(new Vector3(-90f, -90f, -angle));
-Debug.DrawLine(transform.position, transform.up * 1000, Color.white);
+    Debug.DrawLine(transform.position, transform.up * 1000, Color.white);
     if (Input.GetMouseButton(0))
     {
       
@@ -60,9 +60,12 @@ Debug.DrawLine(transform.position, transform.up * 1000, Color.white);
 
   private void FixedUpdate()
   {
+
+    
     change = Vector3.zero;
     change.x = Input.GetAxisRaw("Horizontal");
     change.z = Input.GetAxisRaw("Vertical");
+    Debug.Log(change);
 
     MoveCharacter();
   }
