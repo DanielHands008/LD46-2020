@@ -46,12 +46,12 @@ public class DoTask : MonoBehaviour
   }
 
   // Update is called once per frame
-  void Update()
+  void FixedUpdate()
   {
     if(doingTask) {
       timer++;
-      DoingTaskPercent.GetComponent<UnityEngine.UI.Text>().text = (timer / 10).ToString() + "%";
-      if(timer > 1000) {
+      DoingTaskPercent.GetComponent<UnityEngine.UI.Text>().text = (timer / 3).ToString() + "%";
+      if(timer > 300) {
         taskDone = true;
         m_taskboard.nextTask();
         doingTask = false;

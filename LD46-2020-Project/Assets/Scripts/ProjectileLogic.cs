@@ -13,10 +13,10 @@ public class ProjectileLogic : MonoBehaviour
   }
 
   // Update is called once per frame
-  void Update()
+  void FixedUpdate()
   {
     time++;
-    if (time == 500)
+    if (time == 300)
     {
       Destroy(gameObject);
     }
