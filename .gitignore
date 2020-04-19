@@ -58,6 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+com.unity.probuilder/Settings.json
+
 # VS Code
 .vscode
 
