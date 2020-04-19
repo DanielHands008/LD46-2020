@@ -23,7 +23,7 @@ public class PlayerControl : MonoBehaviour
     m_riigidbody = GetComponent<Rigidbody>();
     m_animator = GetComponent<Animator>();
 
-        Bullet.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        
     }
 
   private void Update()
