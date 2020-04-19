@@ -20,8 +20,8 @@ public class PlayerControl : MonoBehaviour
   {
     m_riigidbody = GetComponent<Rigidbody>();
 
-        
-    }
+
+  }
 
   private void Update()
   {
@@ -40,7 +40,7 @@ public class PlayerControl : MonoBehaviour
     Debug.DrawLine(transform.position, transform.up * 1000, Color.white);
     if (Input.GetMouseButton(0))
     {
-      
+
       Shoot();
     }
 
@@ -61,11 +61,11 @@ public class PlayerControl : MonoBehaviour
   private void FixedUpdate()
   {
 
-    
+
     change = Vector3.zero;
     change.x = Input.GetAxisRaw("Horizontal");
     change.z = Input.GetAxisRaw("Vertical");
-    Debug.Log(change);
+    //Debug.Log(change);
 
     MoveCharacter();
   }
