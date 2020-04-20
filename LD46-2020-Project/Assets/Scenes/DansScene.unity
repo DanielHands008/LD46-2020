@@ -1179,7 +1179,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8c7a1d0bb471c3c42b2c9f781491fbda,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.302
+      value: 1.712
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8c7a1d0bb471c3c42b2c9f781491fbda,
         type: 3}
@@ -1239,7 +1239,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8c7a1d0bb471c3c42b2c9f781491fbda,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 130
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8c7a1d0bb471c3c42b2c9f781491fbda,
         type: 3}
@@ -2147,6 +2147,16 @@ PrefabInstance:
       propertyPath: SkipBossAfter
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
+        type: 3}
+      propertyPath: m_aftertaskactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
+        type: 3}
+      propertyPath: TimeToComplete
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 5859544489180206418, guid: 87ff0063ffdd9694e9822e23c91701bf,
         type: 3}
       propertyPath: m_Name
@@ -2627,6 +2637,31 @@ PrefabInstance:
       propertyPath: SkipBossAfter
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
+        type: 3}
+      propertyPath: m_aftertaskactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
+        type: 3}
+      propertyPath: _theObject
+      value: 
+      objectReference: {fileID: 1311781103}
+    - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
+        type: 3}
+      propertyPath: LinkedObject
+      value: 
+      objectReference: {fileID: 1311781103}
+    - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
+        type: 3}
+      propertyPath: LinkedObjectAction
+      value: disable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
+        type: 3}
+      propertyPath: TimeToComplete
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5859544489180206418, guid: 87ff0063ffdd9694e9822e23c91701bf,
         type: 3}
       propertyPath: m_Name
@@ -2857,6 +2892,24 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1311781103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: a17eed9dc80c2d94f83226f32b8e8848,
+    type: 3}
+  m_PrefabInstance: {fileID: 2019475703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1311781107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311781103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62624e44cc143c34e96b7a48299bcf59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1341664419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2892,7 +2945,17 @@ PrefabInstance:
     - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
         type: 3}
       propertyPath: SkipBossAfter
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
+        type: 3}
+      propertyPath: m_aftertaskactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
+        type: 3}
+      propertyPath: TimeToComplete
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5859544489180206418, guid: 87ff0063ffdd9694e9822e23c91701bf,
         type: 3}
@@ -3837,7 +3900,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4ead4d35d93893b428d7b2edfa08abc3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.243
+      value: 1.6700001
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4ead4d35d93893b428d7b2edfa08abc3,
         type: 3}
@@ -3897,7 +3960,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4ead4d35d93893b428d7b2edfa08abc3,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 13.047619
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 4ead4d35d93893b428d7b2edfa08abc3,
         type: 3}
@@ -3960,7 +4023,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: f5aa5488f84b9db468f68c3fb2097cbb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.74
+      value: 1.344
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f5aa5488f84b9db468f68c3fb2097cbb,
         type: 3}
@@ -4020,7 +4083,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: f5aa5488f84b9db468f68c3fb2097cbb,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 70
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: f5aa5488f84b9db468f68c3fb2097cbb,
         type: 3}
@@ -4307,7 +4370,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: a17eed9dc80c2d94f83226f32b8e8848,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.456
+      value: 1.777
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a17eed9dc80c2d94f83226f32b8e8848,
         type: 3}
@@ -4367,7 +4430,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: a17eed9dc80c2d94f83226f32b8e8848,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 14.398408
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: a17eed9dc80c2d94f83226f32b8e8848,
         type: 3}
@@ -4554,6 +4617,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SkipBossAfter
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859544489180206417, guid: 87ff0063ffdd9694e9822e23c91701bf,
+        type: 3}
+      propertyPath: m_aftertaskactions
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5859544489180206418, guid: 87ff0063ffdd9694e9822e23c91701bf,
         type: 3}

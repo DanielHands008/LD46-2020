@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DoTask : MonoBehaviour
 {
-
+  [SerializeField] GameObject LinkedObject;
+  [SerializeField] string LinkedObjectAction;
+  public int TimeToComplete = 100;
   public int taskNumber;
-
   public bool SkipBossAfter;
   public GameObject DoingTaskCanvas;
   public GameObject DoingTaskText;
@@ -36,13 +38,15 @@ public class DoTask : MonoBehaviour
 
   }
 
-  void changeTask() {
+  void changeTask()
+  {
     m_taskboard.changeTaskboardText(2);
   }
   // Start is called before the first frame update
   void Start()
   {
-    if(m_taskboard.getCurrentTaskNumber() != taskNumber) {
+    if (m_taskboard.getCurrentTaskNumber() != taskNumber)
+    {
       GetComponent<Renderer>().enabled = false;
     }
   }
@@ -50,16 +54,28 @@ public class DoTask : MonoBehaviour
   // Update is called once per frame
   void FixedUpdate()
   {
-    if(m_taskboard.getCurrentTaskNumber() == taskNumber) {
+    if (m_taskboard.getCurrentTaskNumber() == taskNumber)
+    {
       GetComponent<Renderer>().enabled = true;
     }
-    else {
+    else
+    {
       GetComponent<Renderer>().enabled = false;
     }
-    if(doingTask) {
+    if (doingTask)
+    {
       timer++;
-      DoingTaskPercent.GetComponent<UnityEngine.UI.Text>().text = (timer / 3).ToString() + "%";
-      if(timer > 300) {
+      DoingTaskPercent.GetComponent<UnityEngine.UI.Text>().text = Math.Round(((float)timer / (float)TimeToComplete)*100).ToString() + "%";
+      if (timer > TimeToComplete)
+      {
+        try
+        {
+          LinkedObject.GetComponent<AfterTaskActions>().doAction(LinkedObjectAction);
+        }
+        catch (Exception e)
+        {
+
+        }
         taskDone = true;
         m_taskboard.nextTask(SkipBossAfter);
         doingTask = false;
@@ -67,4 +83,5 @@ public class DoTask : MonoBehaviour
       }
     }
   }
+
 }
