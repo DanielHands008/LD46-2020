@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
   public TaskBoard m_taskboard;
   public float speed;
+  public float sprintSpeed;
   public Transform Bullet;
   public float ProjectileSpeed;
   public int FireRate;
@@ -125,17 +126,37 @@ public class PlayerControl : MonoBehaviour
     change = Vector3.zero;
     change.x = Input.GetAxisRaw("Horizontal");
     change.z = Input.GetAxisRaw("Vertical");
-    //Debug.Log(change);
+        //Debug.Log(change);
 
-    MoveCharacter();
+        MoveCharacter();
+
+       
+      
+
   }
 
 
   void MoveCharacter()
   {
-    m_riigidbody.MovePosition(transform.position + -change * speed * Time.deltaTime);
+        Debug.Log("moving");
+        m_riigidbody.MovePosition(transform.position + -change * speed * Time.deltaTime);
 
-  }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+
+            MoveCharacterFaster();
+        }
+
+    }
+
+    void MoveCharacterFaster()
+    {
+        Debug.Log("movingfaster");
+        m_riigidbody.MovePosition(transform.position + -change * sprintSpeed * Time.deltaTime);
+
+    }
+
+
 
 
 
