@@ -32,9 +32,13 @@ public class ProjectileLogic : MonoBehaviour
     if (StopProjectileOnAnyCollision || collision.gameObject.tag == "Wall")
     {
       GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+      GetComponent<SphereCollider>().enabled = false;
     }
     else {
       GetComponent<Rigidbody>().useGravity = true;
     }
+
+
+        
   }
 }

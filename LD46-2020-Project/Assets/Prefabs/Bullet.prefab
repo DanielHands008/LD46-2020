@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90736714396db7143a722ef15ee271c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeSpan: 300
   StopProjectileOnAnyCollision: 0
 --- !u!212 &-2040612143374929779
 SpriteRenderer:
