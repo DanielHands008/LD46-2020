@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -61,7 +62,13 @@ public class PlayerControl : MonoBehaviour
       pel.GetComponent<Rigidbody>().AddForce(transform.up * ProjectileSpeed);
       currentAmmo--;
       timeBetweenShots = 1;
-      m_taskboard.updateAmmoText(currentAmmo.ToString());
+      try
+      {
+        m_taskboard.updateAmmoText(currentAmmo.ToString());
+      }
+      catch (Exception e) {
+
+      }
       if (currentAmmo == 0)
       {
         reloadTimer = 1;
@@ -91,13 +98,26 @@ public class PlayerControl : MonoBehaviour
     if (reloadTimer > 0)
     {
       reloadTimer++;
-      m_taskboard.updateAmmoText("Reloading");
+      try
+      {
+        m_taskboard.updateAmmoText("Reloading");
+      }
+      catch (Exception e) {
+
+      }
+      
     }
     if (reloadTimer >= ReloadSpeed)
     {
       reloadTimer = 0;
       currentAmmo = RoundsPerClip;
-      m_taskboard.updateAmmoText(currentAmmo.ToString());
+            try
+      {
+        m_taskboard.updateAmmoText(currentAmmo.ToString());
+      }
+      catch (Exception e) {
+
+      }
     }
     change = Vector3.zero;
     change.x = Input.GetAxisRaw("Horizontal");
