@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProjectileLogic : MonoBehaviour
 {
+  public int lifeSpan = 300;
     public bool StopProjectileOnAnyCollision;
   private int time = 0;
   // Start is called before the first frame update
@@ -16,7 +17,7 @@ public class ProjectileLogic : MonoBehaviour
   void FixedUpdate()
   {
     time++;
-    if (time == 300)
+    if (time == lifeSpan)
     {
       Destroy(gameObject);
     }
