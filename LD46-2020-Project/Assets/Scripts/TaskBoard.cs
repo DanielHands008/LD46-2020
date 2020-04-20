@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TaskBoard : MonoBehaviour
 {
-  public GameObject AmmoCounterText;
-  public GameObject TaskboardCanvas;
-  public GameObject TaskboardText;
+  GameObject tmp;
+  GameObject TaskboardCanvas;
+  GameObject AmmoCounterText;
+  GameObject TaskboardText;
   private bool findBoss = true;
   private int currentTask = 1;
   private string[] tasks = { "Find the Boss.", "Clean the microwave.", "File Papers.", "Get the milk.", "Put the milk in the fridge.", "Done!" };
@@ -57,6 +58,9 @@ public class TaskBoard : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
+    TaskboardCanvas = GameObject.Find("TaskboardCanvas");
+    AmmoCounterText = GameObject.Find("AmmoCounterText");
+    TaskboardText = GameObject.Find("TaskboardText");
     TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[0];
   }
 

@@ -23,10 +23,11 @@ public class PlayerControl : MonoBehaviour
   private float angle;
 
 
-  void Start()
+  IEnumerator Start()
   {
     m_riigidbody = GetComponent<Rigidbody>();
     currentAmmo = RoundsPerClip;
+    yield return new WaitForSeconds(.05f);
     m_taskboard.updateAmmoText(currentAmmo.ToString());
   }
 
