@@ -32,5 +32,8 @@ public class ProjectileLogic : MonoBehaviour
     {
       GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
     }
+    else {
+      GetComponent<Rigidbody>().useGravity = true;
+    }
   }
 }
