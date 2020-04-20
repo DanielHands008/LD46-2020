@@ -42,12 +42,20 @@ public class DoTask : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-
+    if(m_taskboard.getCurrentTaskNumber() != taskNumber) {
+      GetComponent<Renderer>().enabled = false;
+    }
   }
 
   // Update is called once per frame
   void FixedUpdate()
   {
+    if(m_taskboard.getCurrentTaskNumber() == taskNumber) {
+      GetComponent<Renderer>().enabled = true;
+    }
+    else {
+      GetComponent<Renderer>().enabled = false;
+    }
     if(doingTask) {
       timer++;
       DoingTaskPercent.GetComponent<UnityEngine.UI.Text>().text = (timer / 3).ToString() + "%";
