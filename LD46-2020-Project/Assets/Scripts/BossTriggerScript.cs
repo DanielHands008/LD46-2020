@@ -8,7 +8,7 @@ public class BossTriggerScript : MonoBehaviour
     GameObject ConvoCanvas;
     GameObject ConvoBossText;
     GameObject ConvoPlayerText;
-    private string[] bossDialog = { "I need you to clean the microwave in the break room.", "Can you file these documents for me, thanks.", "Someone left the milk out, get it and put it back in the fridge.", "Don't give it to me, put it in the fridge.", "All done! Great work."};
+    private string[] bossDialog = { "The bathroom need to be cleaned, go clean it!", "Now wash those hands!", "Go organize those shelves!", "Bob’s been uppity lately, go beat his high score in Tetris!", "Some one has been making a mess in the breakroom, the microwave is a mess. Clean it.", "Someone left a carton of milk on the table in the break room, put it back in the fridge!", "Dont give it to me put it back into the fridge.", "There is an email that needs to be responded to on that computer!", "The elevator doors are smudged, go clean them!", "Water the plant on my desk!", "The plant over there needs to be watered!", "I need the file for the big account!", "Good work, thats all I have for you right now."};
   void OnTriggerEnter(Collider other)
   {
       Debug.Log("Boss Entered");

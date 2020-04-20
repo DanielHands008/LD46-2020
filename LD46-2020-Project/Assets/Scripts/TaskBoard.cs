@@ -10,7 +10,7 @@ public class TaskBoard : MonoBehaviour
   GameObject TaskboardText;
   private bool findBoss = true;
   private int currentTask = 1;
-  private string[] tasks = { "Find the Boss.", "Clean the microwave.", "File Papers.", "Get the milk.", "Put the milk in the fridge.", "Done!" };
+  private string[] tasks = { "Find the Boss.", "Clean the bathroom.", "Wash Hands.", "Reorganize the storage room.", "Beat Bob’s high score in Tetris.", "Clean the breakroom microwave.", "Pickup milk.", "Put the milk in the fridge.", "Answer an email.", "Clean the elevator doors.", "Water the boss’s plant.", "Water the office plant.", "Grab file from the filing cabinet.", "All done!" };
 
   public void bossFound() {
     findBoss = false;

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6499072170129724606}
   m_LocalRotation: {x: 0.000064834945, y: -0.70714855, z: -0.70706505, w: -0.00006479769}
   m_LocalPosition: {x: 6.119, y: 2.017, z: -2.642}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6499072170719048964}
   m_Father: {fileID: 0}
@@ -108,8 +108,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6499072170603630182}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.7548405}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 6499072171394374650}
@@ -121,7 +121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.7482986, y: -3.0339985}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!223 &6499072170603630171
@@ -211,14 +211,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6499072170719048965}
-  m_LocalRotation: {x: -0.000064834945, y: 0.70714855, z: 0.70706505, w: -0.00006479769}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 35, y: 5, z: 35}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: -0, y: 0, z: -0.5}
+  m_LocalScale: {x: 3.5, y: 0.5, z: 3.5}
   m_Children:
   - {fileID: 6499072170603630170}
   m_Father: {fileID: 6499072170129724592}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!33 &6499072170719049208
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -293,7 +293,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_taskboard: {fileID: 0}
-  ConvoCanvas: {fileID: 6499072170603630182}
 --- !u!1 &6499072171394374651
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +304,7 @@ GameObject:
   - component: {fileID: 6499072171394374650}
   - component: {fileID: 6499072171394374652}
   - component: {fileID: 6499072171394374653}
+  - component: {fileID: 5844912522548384945}
   m_Layer: 5
   m_Name: BossTextBox
   m_TagString: Untagged
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -372,6 +372,21 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Hello? Yes this is Boss. I need you to clean the microwave in the break
     room.
+--- !u!114 &5844912522548384945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6499072171394374651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6499072171908238829
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +544,7 @@ GameObject:
   - component: {fileID: 6499072172071468892}
   - component: {fileID: 6499072172071468894}
   - component: {fileID: 6499072172071468895}
+  - component: {fileID: 8447697900690189919}
   m_Layer: 5
   m_Name: PlayerTextBox
   m_TagString: Untagged
@@ -576,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -595,3 +611,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Roger Boss, I'll get right on that.
+--- !u!114 &8447697900690189919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6499072172071468893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
