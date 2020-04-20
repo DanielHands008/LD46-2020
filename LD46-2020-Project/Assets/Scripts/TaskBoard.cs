@@ -41,6 +41,10 @@ public class TaskBoard : MonoBehaviour
     }
   }
 
+  public bool haveToFindBos() {
+    return findBoss;
+  }
+
   public string getTaskName(int taskNumber)
   {
     return tasks[taskNumber];
