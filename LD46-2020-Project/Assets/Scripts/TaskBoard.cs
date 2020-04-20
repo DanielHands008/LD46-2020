@@ -4,50 +4,72 @@ using UnityEngine;
 
 public class TaskBoard : MonoBehaviour
 {
-  private int currentTask = 1;
-private string[] tasks = {"Clean the microwave.", "File Papers.", "All Done!"};
+  public bool AlwaysShowTask;
   public GameObject TaskboardCanvas;
   public GameObject TaskboardText;
+  private bool findBoss = true;
+  private int currentTask = 1;
+  private string[] tasks = { "Find the Boss.", "Clean the microwave.", "File Papers.", "All Done!" };
   void OnTriggerEnter(Collider other)
   {
-    if (other.gameObject.tag == "Player")
+    if (other.gameObject.tag == "Player" && !AlwaysShowTask)
     {
       TaskboardCanvas.SetActive(true);
-      Debug.Log("Player has entered.");
     }
 
   }
   void OnTriggerExit(Collider other)
   {
-    if (other.gameObject.tag == "Player")
+    if (other.gameObject.tag == "Player" && !AlwaysShowTask)
     {
       TaskboardCanvas.SetActive(false);
-      Debug.Log("Player has left.");
     }
 
   }
 
-  public void nextTask() {
+  public void bossFound() {
+    findBoss = false;
+    TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[currentTask];
+  }
+
+  public void nextTask()
+  {
+    findBoss = true;
     currentTask++;
-    TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[currentTask-1];
+    TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[0];
   }
 
-  public int getCurrentTaskNumber() {
-    return currentTask;
+  public int getCurrentTaskNumber()
+  {
+    if (findBoss)
+    {
+      return 0;
+    }
+    else
+    {
+      return currentTask;
+    }
   }
 
-  public string getTaskName(int taskNumber) {
-      return tasks[taskNumber-1];
+  public string getTaskName(int taskNumber)
+  {
+    return tasks[taskNumber];
   }
 
   public void changeTaskboardText(int taskNumber)
   {
-    TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[taskNumber-1];
+    TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[taskNumber];
   }
 
   // Start is called before the first frame update
   void Start()
   {
+    if(AlwaysShowTask) {
+      TaskboardCanvas.SetActive(true);
+    }
+    else {
+      TaskboardCanvas.SetActive(false);
+    }
     TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[0];
   }
 
