@@ -11,8 +11,10 @@ public class DoTask : MonoBehaviour
   public int taskNumber;
   public bool SkipBossAfter;
   public GameObject DoingTaskCanvas;
-  public GameObject DoingTaskText;
-  public GameObject DoingTaskPercent;
+  GameObject DoingTaskText;
+  GameObject DoingTaskPercent;
+  //public GameObject DoingTaskText;
+  //public GameObject DoingTaskPercent;
   public TaskBoard m_taskboard;
   private bool taskDone = false;
   private int timer = 0;
@@ -45,6 +47,8 @@ public class DoTask : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
+    DoingTaskText = DoingTaskCanvas.transform.GetChild(0).gameObject;
+    DoingTaskPercent = DoingTaskCanvas.transform.GetChild(1).gameObject;
     if (m_taskboard.getCurrentTaskNumber() != taskNumber)
     {
       GetComponent<Renderer>().enabled = false;
@@ -65,7 +69,7 @@ public class DoTask : MonoBehaviour
     if (doingTask)
     {
       timer++;
-      DoingTaskPercent.GetComponent<UnityEngine.UI.Text>().text = Math.Round(((float)timer / (float)TimeToComplete)*100).ToString() + "%";
+      DoingTaskPercent.GetComponent<UnityEngine.UI.Text>().text = Math.Round(((float)timer / (float)TimeToComplete) * 100).ToString() + "%";
       if (timer > TimeToComplete)
       {
         try
