@@ -8,7 +8,7 @@ public class BossTriggerScript : MonoBehaviour
     public GameObject ConvoCanvas;
     public GameObject ConvoBossText;
     public GameObject ConvoPlayerText;
-    private string[] bossDialog = { "I need you to clean the microwave in the break room.", "Can you file these documents for me, thanks.", "Pineapples"};
+    private string[] bossDialog = { "I need you to clean the microwave in the break room.", "Can you file these documents for me, thanks.", "Someone left the milk out, get it and put it back in the fridge.", "Don't give it to me, put it in the fridge.", "All done! Great work."};
   void OnTriggerEnter(Collider other)
   {
       Debug.Log("Boss Entered");
@@ -32,7 +32,7 @@ public class BossTriggerScript : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-
+    GetComponent<Renderer>().enabled = false;
   }
 
   // Update is called once per frame

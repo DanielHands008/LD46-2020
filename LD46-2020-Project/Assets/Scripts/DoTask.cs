@@ -7,7 +7,7 @@ public class DoTask : MonoBehaviour
 
   public int taskNumber;
 
-
+  public bool SkipBossAfter;
   public GameObject DoingTaskCanvas;
   public GameObject DoingTaskText;
   public GameObject DoingTaskPercent;
@@ -61,7 +61,7 @@ public class DoTask : MonoBehaviour
       DoingTaskPercent.GetComponent<UnityEngine.UI.Text>().text = (timer / 3).ToString() + "%";
       if(timer > 300) {
         taskDone = true;
-        m_taskboard.nextTask();
+        m_taskboard.nextTask(SkipBossAfter);
         doingTask = false;
         DoingTaskPercent.GetComponent<UnityEngine.UI.Text>().text = "Complete!";
       }

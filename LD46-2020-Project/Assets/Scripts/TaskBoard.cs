@@ -9,7 +9,7 @@ public class TaskBoard : MonoBehaviour
   public GameObject TaskboardText;
   private bool findBoss = true;
   private int currentTask = 1;
-  private string[] tasks = { "Find the Boss.", "Clean the microwave.", "File Papers.", "All Done!" };
+  private string[] tasks = { "Find the Boss.", "Clean the microwave.", "File Papers.", "Get the milk.", "Put the milk in the fridge.", "Done!" };
   void OnTriggerEnter(Collider other)
   {
     if (other.gameObject.tag == "Player" && !AlwaysShowTask)
@@ -32,11 +32,16 @@ public class TaskBoard : MonoBehaviour
     TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[currentTask];
   }
 
-  public void nextTask()
+  public void nextTask(bool skipBoss)
   {
-    findBoss = true;
     currentTask++;
-    TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[0];
+    if(!skipBoss) {
+      findBoss = true;
+      TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[0];
+    }
+    else {
+      TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[currentTask];
+    }
   }
 
   public int getCurrentTaskNumber()
