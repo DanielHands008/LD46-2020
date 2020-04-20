@@ -159,7 +159,16 @@ public class PlayerControl : MonoBehaviour
 
 
 
-
+  void OnTriggerEnter(Collider other)
+  {
+      Debug.Log("COL");
+    if (other.gameObject.tag == "OutOfBounds")
+    {
+      Debug.Log("OOB");
+      GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+      transform.position = new Vector3(-3.79f, 3f, -19f);
+    }
+  }
 
 
 

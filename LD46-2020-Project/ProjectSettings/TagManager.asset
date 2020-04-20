@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - Floor
   - Projectiles
+  - OutOfBounds
   layers:
   - Default
   - TransparentFX
