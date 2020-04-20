@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossTriggerScript : MonoBehaviour
 {
     public TaskBoard m_taskboard;
-    public GameObject ConvoCanvas;
+    GameObject ConvoCanvas;
     GameObject ConvoBossText;
     GameObject ConvoPlayerText;
     private string[] bossDialog = { "I need you to clean the microwave in the break room.", "Can you file these documents for me, thanks.", "Someone left the milk out, get it and put it back in the fridge.", "Don't give it to me, put it in the fridge.", "All done! Great work."};
@@ -32,6 +32,7 @@ public class BossTriggerScript : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
+    ConvoCanvas = gameObject.transform.GetChild(0).gameObject;
     ConvoBossText = ConvoCanvas.transform.GetChild(0).gameObject;
     ConvoPlayerText = ConvoCanvas.transform.GetChild(1).gameObject;
     GetComponent<Renderer>().enabled = false;
