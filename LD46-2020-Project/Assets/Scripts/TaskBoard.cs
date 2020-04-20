@@ -5,28 +5,11 @@ using UnityEngine;
 public class TaskBoard : MonoBehaviour
 {
   public GameObject AmmoCounterText;
-  public bool AlwaysShowTask;
   public GameObject TaskboardCanvas;
   public GameObject TaskboardText;
   private bool findBoss = true;
   private int currentTask = 1;
   private string[] tasks = { "Find the Boss.", "Clean the microwave.", "File Papers.", "Get the milk.", "Put the milk in the fridge.", "Done!" };
-  void OnTriggerEnter(Collider other)
-  {
-    if (other.gameObject.tag == "Player" && !AlwaysShowTask)
-    {
-      TaskboardCanvas.SetActive(true);
-    }
-
-  }
-  void OnTriggerExit(Collider other)
-  {
-    if (other.gameObject.tag == "Player" && !AlwaysShowTask)
-    {
-      TaskboardCanvas.SetActive(false);
-    }
-
-  }
 
   public void bossFound() {
     findBoss = false;
@@ -74,12 +57,6 @@ public class TaskBoard : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    if(AlwaysShowTask) {
-      TaskboardCanvas.SetActive(true);
-    }
-    else {
-      TaskboardCanvas.SetActive(false);
-    }
     TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[0];
   }
 
