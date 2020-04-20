@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TaskBoard : MonoBehaviour
 {
+  public GameObject AmmoCounterText;
   public bool AlwaysShowTask;
   public GameObject TaskboardCanvas;
   public GameObject TaskboardText;
@@ -64,6 +65,10 @@ public class TaskBoard : MonoBehaviour
   public void changeTaskboardText(int taskNumber)
   {
     TaskboardText.GetComponent<UnityEngine.UI.Text>().text = "Current Task: " + tasks[taskNumber];
+  }
+
+  public void updateAmmoText(string text) {
+    AmmoCounterText.GetComponent<UnityEngine.UI.Text>().text = text;
   }
 
   // Start is called before the first frame update

@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+  public TaskBoard m_taskboard;
   public float speed;
-
   public Transform Bullet;
   public float ProjectileSpeed;
+  public int FireRate;
+  public int RoundsPerClip = 10;
+  public int ReloadSpeed = 100;
 
+  private int timeBetweenShots = 0;
+  private int currentAmmo;
+  private int reloadTimer = 0;
 
   private Rigidbody m_riigidbody;
   private Vector3 change;
@@ -19,12 +25,17 @@ public class PlayerControl : MonoBehaviour
   void Start()
   {
     m_riigidbody = GetComponent<Rigidbody>();
-
-
+    currentAmmo = RoundsPerClip;
+    m_taskboard.updateAmmoText(currentAmmo.ToString());
   }
 
   private void Update()
   {
+    if (currentAmmo != RoundsPerClip && reloadTimer == 0 && Input.GetKeyDown("r"))
+    {
+      currentAmmo = 0;
+      reloadTimer = 1;
+    }
 
     //Get the Screen positions of the object
     Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
@@ -43,9 +54,19 @@ public class PlayerControl : MonoBehaviour
 
   void Shoot()
   {
-    //Creating the bullet and shooting it
-    var pel = Instantiate(Bullet, transform.position, Quaternion.Euler(-90, 0, -angle - 90));
-    pel.GetComponent<Rigidbody>().AddForce(transform.up * ProjectileSpeed);
+    if (timeBetweenShots == 0 && currentAmmo > 0)
+    {
+      //Creating the bullet and shooting it
+      var pel = Instantiate(Bullet, transform.position, Quaternion.Euler(-90, 0, -angle - 90));
+      pel.GetComponent<Rigidbody>().AddForce(transform.up * ProjectileSpeed);
+      currentAmmo--;
+      timeBetweenShots = 1;
+      m_taskboard.updateAmmoText(currentAmmo.ToString());
+      if (currentAmmo == 0)
+      {
+        reloadTimer = 1;
+      }
+    }
   }
 
   float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
@@ -57,10 +78,27 @@ public class PlayerControl : MonoBehaviour
   {
     if (Input.GetMouseButton(0))
     {
-
       Shoot();
     }
-
+    if (timeBetweenShots > 0)
+    {
+      timeBetweenShots++;
+    }
+    if (timeBetweenShots >= FireRate)
+    {
+      timeBetweenShots = 0;
+    }
+    if (reloadTimer > 0)
+    {
+      reloadTimer++;
+      m_taskboard.updateAmmoText("Reloading");
+    }
+    if (reloadTimer >= ReloadSpeed)
+    {
+      reloadTimer = 0;
+      currentAmmo = RoundsPerClip;
+      m_taskboard.updateAmmoText(currentAmmo.ToString());
+    }
     change = Vector3.zero;
     change.x = Input.GetAxisRaw("Horizontal");
     change.z = Input.GetAxisRaw("Vertical");

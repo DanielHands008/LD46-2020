@@ -227,6 +227,7 @@ MonoBehaviour:
   speed: 5
   Bullet: {fileID: 6157700696479623939, guid: 590a97a68a1d55f47a8a1832b03b6581, type: 3}
   ProjectileSpeed: 1000
+  FireRate: 15
 --- !u!1 &8348710654914831204
 GameObject:
   m_ObjectHideFlags: 0
