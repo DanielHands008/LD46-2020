@@ -41,20 +41,26 @@ public class PlayerControl : MonoBehaviour
     }
 
     //Get the Screen positions of the object
-    Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
-
+    //Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+    Vector2 positionOnScreen = Camera.main.WorldToScreenPoint(transform.position);
 
     //Get the Screen position of the mouse
-    Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
-   
+    //Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
     //Get the angle between the points
-    angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
+    angle = AngleBetweenTwoPoints(positionOnScreen, Input.mousePosition);
 
     //Ta Daaa
     transform.rotation = Quaternion.Euler(new Vector3(-90f, -90f, -angle));
     Debug.DrawLine(transform.position, transform.up * 1000, Color.white);
 
+  }
+
+  float calcAngle(Vector3 a, Vector3 b)
+  {
+    float xDiff = b.x - a.x;
+    float yDiff = b.y - a.y;
+    return (float)(Math.Atan2(yDiff, xDiff) * 180.0 / Math.PI);
   }
 
   void Shoot()
@@ -70,7 +76,8 @@ public class PlayerControl : MonoBehaviour
       {
         m_taskboard.updateAmmoText(currentAmmo.ToString());
       }
-      catch (Exception e) {
+      catch (Exception e)
+      {
 
       }
       if (currentAmmo == 0)
@@ -106,62 +113,64 @@ public class PlayerControl : MonoBehaviour
       {
         m_taskboard.updateAmmoText("Reloading");
       }
-      catch (Exception e) {
+      catch (Exception e)
+      {
 
       }
-      
+
     }
     if (reloadTimer >= ReloadSpeed)
     {
       reloadTimer = 0;
       currentAmmo = RoundsPerClip;
-            try
+      try
       {
         m_taskboard.updateAmmoText(currentAmmo.ToString());
       }
-      catch (Exception e) {
+      catch (Exception e)
+      {
 
       }
     }
     change = Vector3.zero;
     change.x = Input.GetAxisRaw("Horizontal");
     change.z = Input.GetAxisRaw("Vertical");
-        //Debug.Log(change);
+    //Debug.Log(change);
 
-        MoveCharacter();
+    MoveCharacter();
 
-       
-      
+
+
 
   }
 
 
   void MoveCharacter()
   {
-        Debug.Log("moving");
-        m_riigidbody.MovePosition(transform.position + -change * speed * Time.deltaTime);
+    //Debug.Log("moving");
+    m_riigidbody.MovePosition(transform.position + -change * speed * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-
-            MoveCharacterFaster();
-        }
-
-    }
-
-    void MoveCharacterFaster()
+    if (Input.GetKey(KeyCode.LeftShift))
     {
-        Debug.Log("movingfaster");
-        m_riigidbody.MovePosition(transform.position + -change * sprintSpeed * Time.deltaTime);
 
+      MoveCharacterFaster();
     }
+
+  }
+
+  void MoveCharacterFaster()
+  {
+    //Debug.Log("movingfaster");
+    m_riigidbody.MovePosition(transform.position + -change * sprintSpeed * Time.deltaTime);
+
+  }
 
 
 
 
   void OnTriggerEnter(Collider other)
   {
-      Debug.Log("COL");
+    Debug.Log("COL");
     if (other.gameObject.tag == "OutOfBounds")
     {
       Debug.Log("OOB");
